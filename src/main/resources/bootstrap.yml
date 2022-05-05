@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: bootcoin-operations
+  cloud:
+    config:
+      label: main
+      uri: ${CONFIG_SERVER_URI:http://localhost:8081}
+      username: ${SECURITY_USERNAME:root}
+      password: ${SECURITY_PASSWORD:1234}
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: lulio
+    timeout: 5000
+
+# Swagger openapi.docs custom path
+springdoc:
+  api-docs:
+    path: bootcoin-operations/docs
+    enabled: true
+  swagger-ui:
+    path: bootcoin-operations/docs/ui
+    enabled: true
+  show-actuator: true
+
+# Tomcat Server Port
+server:
+  port: 3000
